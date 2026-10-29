@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Streaming — Fala Uma Série</title>
+<meta name="description" id="pageDesc" content="Descubra o que assistir nessa plataforma.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+
+  <section class="page-hero" id="stHero">
+    <div class="container">
+      <h1 id="stName">Streaming</h1>
+      <p id="stDesc"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><h2>Em destaque</h2></div>
+      <div class="row-scroll" id="stFeatured"></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title"><h2>Melhores séries</h2></div>
+      <div id="stBest"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><h2>Mais populares</h2></div>
+      <div class="grid" id="stPopular"></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title"><h2>Chegando em breve</h2></div>
+      <div id="stComingSoon"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><h2>Notícias</h2></div>
+      <div class="grid" id="stNews"></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title"><h2>Listas</h2></div>
+      <div class="grid" id="stLists"></div>
+    </div>
+  </section>
+
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script src="js/streaming-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendário de Lançamentos — Fala Uma Série</title>
+<meta name="description" content="Tudo o que estreia nos streamings, organizado por data.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Calendário de lançamentos</h1>
+      <p>Tudo o que estreia nos próximos dias, organizado por data. (Dados de demonstração.)</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="filters-bar">
+        <select id="fStreaming"><option value="">Todos os streamings</option></select>
+      </div>
+      <div style="max-width:640px;" id="calendarList"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { releases, streamings } = await FUS.loadAll();
+  const fStreaming = document.getElementById('fStreaming');
+  const listEl = document.getElementById('calendarList');
+
+  streamings.forEach(st => fStreaming.insertAdjacentHTML('beforeend', `<option value="${st.slug}">${st.name}</option>`));
+
+  function groupLabel(dateIso) {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const d = new Date(dateIso + 'T00:00:00');
+    const diffDays = Math.round((d - today) / 86400000);
+    if (diffDays < 0) return 'Já lançado';
+    if (diffDays === 0) return 'Hoje';
+    if (diffDays <= 7) return 'Esta semana';
+    if (diffDays <= 31) return 'Este mês';
+    return 'Mais pra frente';
+  }
+
+  function render() {
+    let list = [...releases].sort((a,b) => a.date.localeCompare(b.date));
+    if (fStreaming.value) list = list.filter(r => r.streaming === fStreaming.value);
+
+    const groups = {};
+    list.forEach(r => { const g = groupLabel(r.date); groups[g] = groups[g] || []; groups[g].push(r); });
+
+    const order = ['Hoje', 'Esta semana', 'Este mês', 'Mais pra frente', 'Já lançado'];
+    let html = '';
+    order.forEach(g => {
+      if (!groups[g] || !groups[g].length) return;
+      html += `<div class="calendar-group-title">${g}</div>`;
+      html += groups[g].map(r => {
+        const st = FUS.streamingBySlug(streamings, r.streaming);
+        const d = FUS.fmtDateShort(r.date);
+        return `
+        <div class="release-row">
+          <div class="release-date"><div class="day">${d.day}</div><div class="mon">${d.mon}</div></div>
+          <div class="release-info"><h4>${r.name}</h4><p>${r.detail} · ${r.type}</p></div>
+          <span class="streaming-badge" style="margin-left:auto;"><span class="dot" style="background:${st ? st.color : '#888'}"></span>${st ? st.name : r.streaming}</span>
+        </div>`;
+      }).join('');
+    });
+
+    listEl.innerHTML = html || '<p class="empty-state">Nada por aqui com esse filtro.</p>';
+  }
+
+  fStreaming.addEventListener('change', render);
+  render();
+});
+</script>
+</body>
+</html>

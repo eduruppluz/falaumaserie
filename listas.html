@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listas — Fala Uma Série</title>
+<meta name="description" content="Todas as listas do Fala Uma Série: o que assistir, maratonar e descobrir.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Listas</h1>
+      <p>Curadoria pra você nunca mais ficar sem saber o que assistir.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid" id="listsGrid"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { lists } = await FUS.loadAll();
+  document.getElementById('listsGrid').innerHTML = lists.map(l => FUS.listCard(l)).join('');
+});
+</script>
+</body>
+</html>

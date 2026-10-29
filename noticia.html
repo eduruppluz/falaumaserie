@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Notícia — Fala Uma Série</title>
+<meta name="description" id="pageDesc" content="">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section style="padding:48px 0 0;">
+    <div class="container">
+      <div class="breadcrumb"><a href="noticias.html">Notícias</a> / <span id="crumbCat"></span></div>
+    </div>
+  </section>
+  <section style="padding:0 0 32px;">
+    <div class="container" style="max-width:760px;">
+      <span class="news-cat" id="artCat"></span>
+      <h1 style="font-size:clamp(28px,4.5vw,42px);text-transform:none;letter-spacing:0;line-height:1.1;margin:10px 0 16px;" id="artTitle"></h1>
+      <p style="color:var(--white-faint);font-size:14px;margin-bottom:28px;" id="artMeta"></p>
+      <div style="aspect-ratio:16/9;border-radius:var(--radius);margin-bottom:32px;" id="artImage"></div>
+      <p style="color:var(--white-dim);font-size:17.5px;line-height:1.8;" id="artContent"></p>
+    </div>
+  </section>
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title"><h2>Mais notícias</h2></div>
+      <div class="grid" id="moreNews"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { news } = await FUS.loadAll();
+  const slug = FUS.qs('slug');
+  const n = news.find(x => x.slug === slug) || news[0];
+
+  document.title = `${n.title} — Fala Uma Série`;
+  document.getElementById('pageTitle').textContent = `${n.title} — Fala Uma Série`;
+  document.getElementById('pageDesc').setAttribute('content', n.summary);
+  document.getElementById('crumbCat').textContent = n.category;
+  document.getElementById('artCat').textContent = n.category;
+  document.getElementById('artTitle').textContent = n.title;
+  document.getElementById('artMeta').textContent = `${FUS.fmtDate(n.date)} · Por ${n.author}`;
+  document.getElementById('artImage').style.background = n.gradient;
+  document.getElementById('artContent').textContent = n.content;
+
+  const more = news.filter(x => x.slug !== n.slug).slice(0, 3);
+  document.getElementById('moreNews').innerHTML = more.map(x => FUS.newsCard(x)).join('');
+});
+</script>
+</body>
+</html>

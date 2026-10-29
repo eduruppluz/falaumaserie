@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notícias — Fala Uma Série</title>
+<meta name="description" content="As últimas notícias sobre séries, streamings, lançamentos e trailers.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Notícias</h1>
+      <p>Lançamentos, renovações, cancelamentos e tudo o que rola no universo das séries.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="chip-select" id="catChips" style="margin-bottom:32px;"></div>
+      <div class="grid" id="newsGrid"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { news } = await FUS.loadAll();
+  const categories = ['Todas', ...new Set(news.map(n => n.category))];
+  const chipsEl = document.getElementById('catChips');
+  const gridEl = document.getElementById('newsGrid');
+
+  function render(active) {
+    const list = active === 'Todas' ? news : news.filter(n => n.category === active);
+    gridEl.innerHTML = list.length ? list.map(n => FUS.newsCard(n)).join('') : '<p class="empty-state">Nenhuma notícia nessa categoria ainda.</p>';
+  }
+
+  chipsEl.innerHTML = categories.map((c, i) => `<button class="chip-toggle ${i===0?'active':''}" data-cat="${c}">${c}</button>`).join('');
+  chipsEl.querySelectorAll('.chip-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      chipsEl.querySelectorAll('.chip-toggle').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.cat);
+    });
+  });
+  render('Todas');
+});
+</script>
+</body>
+</html>

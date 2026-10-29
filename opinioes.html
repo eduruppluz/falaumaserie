@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opiniões — Fala Uma Série</title>
+<meta name="description" content="O que a gente realmente achou de cada série. Sem enrolação.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Opiniões</h1>
+      <p>O que a gente realmente achou de cada série — sem papas na língua.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid" id="opinionsGrid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { series } = await FUS.loadAll();
+  const grid = document.getElementById('opinionsGrid');
+  grid.innerHTML = series.map(s => `
+    <a class="news-card fade-in" href="serie.html?slug=${s.slug}#tab-opiniao">
+      <div class="news-image" style="background:${s.gradient};display:flex;align-items:flex-end;padding:14px;">
+        <span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:19px;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.6);">${s.title}</span>
+      </div>
+      <div class="news-body">
+        <span class="news-cat" style="color:var(--yellow)">⭐ ${s.rating.toFixed(1)} / 10</span>
+        <p style="-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;">${s.opinion}</p>
+        <span class="news-meta" style="color:var(--yellow);font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.4px;">Ler opinião completa →</span>
+      </div>
+    </a>
+  `).join('');
+});
+</script>
+</body>
+</html>

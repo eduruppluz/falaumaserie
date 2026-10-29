@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Busca — Fala Uma Série</title>
+<meta name="description" content="Pesquise por séries, listas, notícias e rankings no Fala Uma Série.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Busca</h1>
+      <div class="search-field" style="max-width:520px;margin-top:20px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="pageSearchInput" placeholder="Pesquise por séries, listas, notícias...">
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div id="pageSearchResults" style="max-width:720px;"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const input = document.getElementById('pageSearchInput');
+  const resultsEl = document.getElementById('pageSearchResults');
+  const q = FUS.qs('q');
+  if (q) input.value = q;
+
+  async function search(query) {
+    if (!query || query.trim().length < 2) { resultsEl.innerHTML = '<p class="empty-state">Digite pelo menos 2 letras pra buscar.</p>'; return; }
+    const val = query.trim().toLowerCase();
+    const { series, lists, news, rankings } = await FUS.loadAll();
+    const sHits = series.filter(s => s.title.toLowerCase().includes(val));
+    const lHits = lists.filter(l => l.title.toLowerCase().includes(val));
+    const nHits = news.filter(n => n.title.toLowerCase().includes(val));
+    const rHits = rankings.filter(r => r.title.toLowerCase().includes(val));
+
+    if (!sHits.length && !lHits.length && !nHits.length && !rHits.length) {
+      resultsEl.innerHTML = `<p class="empty-state">Nada encontrado pra "${query}".</p>`;
+      return;
+    }
+    let html = '';
+    if (sHits.length) html += `<div class="search-group" style="margin-bottom:24px;"><h4 style="color:var(--yellow);margin-bottom:12px;">Séries</h4>${sHits.map(s => `<a class="search-hit" href="serie.html?slug=${s.slug}"><span class="swatch" style="background:${s.gradient}"></span><div><strong>${s.title}</strong><small>${s.genres.join(' · ')}</small></div></a>`).join('')}</div>`;
+    if (lHits.length) html += `<div class="search-group" style="margin-bottom:24px;"><h4 style="color:var(--yellow);margin-bottom:12px;">Listas</h4>${lHits.map(l => `<a class="search-hit" href="lista.html?slug=${l.slug}"><span class="swatch" style="background:${l.gradient}"></span><div><strong>${l.title}</strong></div></a>`).join('')}</div>`;
+    if (nHits.length) html += `<div class="search-group" style="margin-bottom:24px;"><h4 style="color:var(--yellow);margin-bottom:12px;">Notícias</h4>${nHits.map(n => `<a class="search-hit" href="noticia.html?slug=${n.slug}"><span class="swatch" style="background:${n.gradient}"></span><div><strong>${n.title}</strong></div></a>`).join('')}</div>`;
+    if (rHits.length) html += `<div class="search-group"><h4 style="color:var(--yellow);margin-bottom:12px;">Rankings</h4>${rHits.map(r => `<a class="search-hit" href="rankings.html?slug=${r.slug}"><span class="swatch" style="background:#333"></span><div><strong>${r.title}</strong></div></a>`).join('')}</div>`;
+    resultsEl.innerHTML = html;
+  }
+
+  let t;
+  input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => search(input.value), 200); });
+  if (q) search(q);
+});
+</script>
+</body>
+</html>

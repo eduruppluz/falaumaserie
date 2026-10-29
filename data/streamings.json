@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "Netflix", "slug": "netflix", "color": "#E3262E", "description": "O maior catálogo de séries originais e licenciadas em um só lugar.", "seriesCount": 6 },
+  { "id": 2, "name": "Prime Video", "slug": "prime-video", "color": "#3DDBFF", "description": "Séries autorais da Amazon e um catálogo forte de ação e ficção científica.", "seriesCount": 3 },
+  { "id": 3, "name": "HBO Max", "slug": "hbo-max", "color": "#9B5CF6", "description": "Casa das produções mais premiadas da TV, de fantasia épica a drama pesado.", "seriesCount": 3 },
+  { "id": 4, "name": "Disney+", "slug": "disney-plus", "color": "#1DD3F0", "description": "Universos consagrados e séries para toda a família em um catálogo em expansão.", "seriesCount": 0 },
+  { "id": 5, "name": "Apple TV+", "slug": "apple-tv-plus", "color": "#FFFFFF", "description": "Menos volume, mais curadoria: séries premiadas com produção de altíssimo nível.", "seriesCount": 0 },
+  { "id": 6, "name": "Paramount+", "slug": "paramount-plus", "color": "#3DA5FF", "description": "Universos consagrados de cinema e TV reunidos em um catálogo em crescimento.", "seriesCount": 0 },
+  { "id": 7, "name": "Globoplay", "slug": "globoplay", "color": "#FFC83D", "description": "O melhor da teledramaturgia nacional ao lado de clássicos internacionais.", "seriesCount": 1 }
+]

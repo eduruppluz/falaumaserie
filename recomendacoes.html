@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recomendações — Fala Uma Série</title>
+<meta name="description" content="Encontre sua próxima série de acordo com o clima que você quer.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Encontre sua próxima série</h1>
+      <p>Não sabe o que assistir hoje? Calma, a gente te ajuda.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="quiz-box" style="max-width:640px;margin-bottom:40px;">
+        <h3>Quero algo...</h3>
+        <div class="chip-select" id="genreChips"></div>
+        <h3 style="margin-top:24px;">No streaming...</h3>
+        <div class="chip-select" id="streamingChips"></div>
+        <button class="btn btn-primary" id="findBtn" style="margin-top:26px;">Encontrar séries</button>
+      </div>
+      <div id="recoResults"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { series, streamings } = await FUS.loadAll();
+  const genreChips = document.getElementById('genreChips');
+  const streamingChips = document.getElementById('streamingChips');
+  const resultsEl = document.getElementById('recoResults');
+
+  const genres = [...new Set(series.flatMap(s => s.genres))].sort();
+  genreChips.innerHTML = genres.map(g => `<button class="chip-toggle" data-genre="${g}">${g}</button>`).join('') +
+    `<button class="chip-toggle" data-genre="__curto">Curto (1 temporada)</button>` +
+    `<button class="chip-toggle" data-genre="__maratonar">Pra maratonar (4+ temporadas)</button>`;
+
+  streamingChips.innerHTML = `<button class="chip-toggle active" data-st="">Qualquer um</button>` +
+    streamings.map(st => `<button class="chip-toggle" data-st="${st.slug}">${st.name}</button>`).join('');
+
+  function toggleChip(e, group) {
+    const btn = e.target.closest('.chip-toggle');
+    if (!btn) return;
+    if (group === streamingChips) {
+      group.querySelectorAll('.chip-toggle').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    } else {
+      btn.classList.toggle('active');
+    }
+  }
+  genreChips.addEventListener('click', e => toggleChip(e, genreChips));
+  streamingChips.addEventListener('click', e => toggleChip(e, streamingChips));
+
+  document.getElementById('findBtn').addEventListener('click', () => {
+    const activeGenres = [...genreChips.querySelectorAll('.chip-toggle.active')].map(b => b.dataset.genre);
+    const activeStreaming = streamingChips.querySelector('.chip-toggle.active')?.dataset.st || '';
+
+    let list = [...series];
+    if (activeStreaming) list = list.filter(s => s.streamings.includes(activeStreaming));
+    const realGenres = activeGenres.filter(g => !g.startsWith('__'));
+    if (realGenres.length) list = list.filter(s => realGenres.some(g => s.genres.includes(g)));
+    if (activeGenres.includes('__curto')) list = list.filter(s => s.seasons === 1);
+    if (activeGenres.includes('__maratonar')) list = list.filter(s => s.seasons >= 4);
+
+    list.sort((a,b) => b.rating - a.rating);
+
+    resultsEl.innerHTML = `
+      <div class="section-title"><h2>Nossas indicações</h2></div>
+      <div class="grid">${list.length ? list.map(s => FUS.seriesCard(s, streamings)).join('') : '<p class="empty-state">Nada com essa combinação — tenta afrouxar os filtros.</p>'}</div>
+    `;
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

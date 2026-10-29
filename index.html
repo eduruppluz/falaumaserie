@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fala Uma Série — Notícias, opiniões e tudo sobre séries</title>
+<meta name="description" content="Notícias, críticas, listas e rankings sobre séries. O portal do Fala Uma Série pra você nunca mais ficar sem saber o que assistir.">
+<meta property="og:title" content="Fala Uma Série">
+<meta property="og:description" content="Seu próximo episódio começa aqui.">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="header-mount" class="site-header"></div>
+
+<main>
+
+  <!-- NEWS HERO GRID (estilo Omelete) -->
+  <section class="container">
+    <div class="news-hero-grid" id="newsHeroGrid"></div>
+  </section>
+
+  <!-- GRID DENSO DE ÚLTIMAS NOTÍCIAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Últimas notícias</h2>
+        <a class="see-all" href="noticias.html">Ver todas →</a>
+      </div>
+      <div class="news-grid-dense" id="denseGrid1"></div>
+    </div>
+  </section>
+
+  <!-- EM ALTA -->
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title">
+        <h2>🔥 Em alta</h2>
+        <a class="see-all" href="series.html">Ver todas →</a>
+      </div>
+      <div class="row-scroll" id="trendingRow"></div>
+    </div>
+  </section>
+
+  <!-- SÉRIE DA SEMANA -->
+  <section class="section">
+    <div class="container" id="weekPick"></div>
+  </section>
+
+  <!-- RANKINGS -->
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title">
+        <h2>🏆 Rankings do Fala Uma Série</h2>
+        <a class="see-all" href="rankings.html">Ver todos os rankings →</a>
+      </div>
+      <div class="grid" id="rankingsGrid"></div>
+    </div>
+  </section>
+
+  <!-- LISTAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>📋 Listas</h2>
+        <a class="see-all" href="listas.html">Ver todas as listas →</a>
+      </div>
+      <div class="grid" id="listsGrid"></div>
+    </div>
+  </section>
+
+  <!-- STREAMINGS -->
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title">
+        <h2>📺 O que assistir?</h2>
+        <a class="see-all" href="streamings.html">Ver todos →</a>
+      </div>
+      <p class="section-sub">Descubra as melhores séries disponíveis nos seus streamings favoritos.</p>
+      <div class="row-scroll" id="streamingsRow"></div>
+    </div>
+  </section>
+
+  <!-- MAIS NOTÍCIAS (grid denso 2) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>📰 Mais notícias</h2>
+        <a class="see-all" href="noticias.html">Ver todas →</a>
+      </div>
+      <div class="news-grid-dense" id="denseGrid2"></div>
+    </div>
+  </section>
+
+  <!-- RECOMENDAÇÕES -->
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);">
+    <div class="container" id="recoSection"></div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <h2>Curte séries? Então acompanha o Fala Uma Série.</h2>
+    <p>Notícias, listas e recomendações novas toda semana, direto no seu feed.</p>
+    <a class="btn btn-primary" href="https://instagram.com" target="_blank" rel="noopener">Seguir no Instagram</a>
+  </section>
+
+</main>
+
+<div id="footer-mount"></div>
+
+<script src="js/utils.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

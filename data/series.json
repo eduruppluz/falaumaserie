@@ -1,0 +1,335 @@
+[
+  {
+    "id": 1,
+    "title": "Breaking Bad",
+    "slug": "breaking-bad",
+    "gradient": "linear-gradient(160deg,#2c2a1f,#5a4a1a 60%,#111)",
+    "description": "Um professor de química com câncer terminal se transforma no maior fabricante de metanfetamina do sudoeste americano.",
+    "genres": ["Drama", "Crime", "Suspense"],
+    "rating": 9.8,
+    "year": "2008–2013",
+    "seasons": 5,
+    "episodes": 62,
+    "status": "Finalizada",
+    "streamings": ["netflix"],
+    "featured": true,
+    "trending": true,
+    "reviewRatings": { "historia": 9.9, "personagens": 9.8, "roteiro": 9.9, "atuacoes": 9.8, "direcao": 9.7, "final": 9.9 },
+    "opinion": "Poucas séries constroem uma queda tão bem arquitetada quanto Breaking Bad. Cada temporada eleva a tensão sem nunca perder o foco no que realmente importa: a transformação de Walter White. É daquelas que a gente recomenda de olhos fechados.",
+    "seasonsList": [
+      { "number": 1, "episodes": 7, "year": 2008, "rating": 9.2 },
+      { "number": 2, "episodes": 13, "year": 2009, "rating": 9.4 },
+      { "number": 3, "episodes": 13, "year": 2010, "rating": 9.6 },
+      { "number": 4, "episodes": 13, "year": 2011, "rating": 9.8 },
+      { "number": 5, "episodes": 16, "year": 2013, "rating": 9.9 }
+    ],
+    "whereToWatch": [
+      { "streaming": "netflix", "status": "Disponível" },
+      { "streaming": "prime-video", "status": "Comprar" },
+      { "streaming": "hbo-max", "status": "Não disponível" }
+    ],
+    "similar": ["better-call-saul", "peaky-blinders", "dark"]
+  },
+  {
+    "id": 2,
+    "title": "Dark",
+    "slug": "dark",
+    "gradient": "linear-gradient(160deg,#161b22,#22303f 60%,#0a0d10)",
+    "description": "O desaparecimento de crianças em uma pequena cidade alemã expõe as relações obscuras entre quatro famílias e abre um portal no tempo.",
+    "genres": ["Ficção Científica", "Suspense", "Drama"],
+    "rating": 9.6,
+    "year": "2017–2020",
+    "seasons": 3,
+    "episodes": 26,
+    "status": "Finalizada",
+    "streamings": ["netflix"],
+    "featured": false,
+    "trending": true,
+    "reviewRatings": { "historia": 9.9, "personagens": 9.4, "roteiro": 9.8, "atuacoes": 9.3, "direcao": 9.7, "final": 9.6 },
+    "opinion": "Dark é um quebra-cabeça que exige atenção total — e recompensa cada minuto dela. A construção de linhas temporais é de uma precisão rara na TV. Uma das séries mais bem amarradas dos últimos anos.",
+    "seasonsList": [
+      { "number": 1, "episodes": 10, "year": 2017, "rating": 9.3 },
+      { "number": 2, "episodes": 8, "year": 2019, "rating": 9.5 },
+      { "number": 3, "episodes": 8, "year": 2020, "rating": 9.7 }
+    ],
+    "whereToWatch": [
+      { "streaming": "netflix", "status": "Disponível" }
+    ],
+    "similar": ["stranger-things", "black-mirror", "breaking-bad"]
+  },
+  {
+    "id": 3,
+    "title": "Stranger Things",
+    "slug": "stranger-things",
+    "gradient": "linear-gradient(160deg,#1a0f1f,#3d1526 60%,#0d0508)",
+    "description": "Em uma cidade do interior dos anos 80, o desaparecimento de um garoto revela experimentos secretos e uma dimensão paralela cheia de monstros.",
+    "genres": ["Ficção Científica", "Terror", "Drama"],
+    "rating": 8.7,
+    "year": "2016–",
+    "seasons": 4,
+    "episodes": 42,
+    "status": "Em andamento",
+    "streamings": ["netflix"],
+    "featured": true,
+    "trending": true,
+    "reviewRatings": { "historia": 8.8, "personagens": 9.2, "roteiro": 8.5, "atuacoes": 9.0, "direcao": 8.7, "final": 8.0 },
+    "opinion": "Nostalgia bem usada é rara, e Stranger Things acerta a mão nisso. O elenco é o grande trunfo — mesmo quando o roteiro dá voltas desnecessárias. A temporada 5 vai fechar o ciclo, e a expectativa é gigante.",
+    "seasonsList": [
+      { "number": 1, "episodes": 8, "year": 2016, "rating": 8.8 },
+      { "number": 2, "episodes": 9, "year": 2017, "rating": 8.6 },
+      { "number": 3, "episodes": 8, "year": 2019, "rating": 8.5 },
+      { "number": 4, "episodes": 9, "year": 2022, "rating": 8.9 }
+    ],
+    "whereToWatch": [
+      { "streaming": "netflix", "status": "Disponível" }
+    ],
+    "similar": ["dark", "fallout", "the-boys"]
+  },
+  {
+    "id": 4,
+    "title": "The Last of Us",
+    "slug": "the-last-of-us",
+    "gradient": "linear-gradient(160deg,#131a12,#233d1f 60%,#0a0d09)",
+    "description": "Vinte anos após uma pandemia devastar a civilização, Joel é contratado para escoltar a jovem Ellie por um país transformado em zona de guerra.",
+    "genres": ["Drama", "Terror", "Ação"],
+    "rating": 9.3,
+    "year": "2023–",
+    "seasons": 2,
+    "episodes": 16,
+    "status": "Em andamento",
+    "streamings": ["hbo-max"],
+    "featured": false,
+    "trending": true,
+    "reviewRatings": { "historia": 9.5, "personagens": 9.6, "roteiro": 9.2, "atuacoes": 9.7, "direcao": 9.4, "final": 9.0 },
+    "opinion": "Rara adaptação de game que entende que o que fazia o material original funcionar era a relação entre os personagens, não só a ação. Pedro Pascal e Bella Ramsey carregam a série nas costas.",
+    "seasonsList": [
+      { "number": 1, "episodes": 9, "year": 2023, "rating": 9.5 },
+      { "number": 2, "episodes": 7, "year": 2025, "rating": 8.9 }
+    ],
+    "whereToWatch": [
+      { "streaming": "hbo-max", "status": "Disponível" },
+      { "streaming": "prime-video", "status": "Comprar" }
+    ],
+    "similar": ["fallout", "black-mirror", "game-of-thrones"]
+  },
+  {
+    "id": 5,
+    "title": "The Boys",
+    "slug": "the-boys",
+    "gradient": "linear-gradient(160deg,#1f1213,#4a1418 60%,#0d0708)",
+    "description": "Um grupo de vigilantes declara guerra a super-heróis corruptos que abusam de seus poderes sob o controle de uma megacorporação.",
+    "genres": ["Ação", "Suspense", "Comédia"],
+    "rating": 8.9,
+    "year": "2019–",
+    "seasons": 4,
+    "episodes": 32,
+    "status": "Em andamento",
+    "streamings": ["prime-video"],
+    "featured": false,
+    "trending": true,
+    "reviewRatings": { "historia": 8.7, "personagens": 9.1, "roteiro": 8.8, "atuacoes": 9.0, "direcao": 8.6, "final": 8.5 },
+    "opinion": "Sátira afiada que só fica mais atual a cada temporada. Antony Starr como Homelander é um dos vilões mais bem construídos da TV recente. Não é pra qualquer estômago, mas vale cada episódio.",
+    "seasonsList": [
+      { "number": 1, "episodes": 8, "year": 2019, "rating": 8.6 },
+      { "number": 2, "episodes": 8, "year": 2020, "rating": 8.9 },
+      { "number": 3, "episodes": 8, "year": 2022, "rating": 9.0 },
+      { "number": 4, "episodes": 8, "year": 2024, "rating": 8.8 }
+    ],
+    "whereToWatch": [
+      { "streaming": "prime-video", "status": "Disponível" }
+    ],
+    "similar": ["fallout", "stranger-things", "peaky-blinders"]
+  },
+  {
+    "id": 6,
+    "title": "Fallout",
+    "slug": "fallout",
+    "gradient": "linear-gradient(160deg,#241a0d,#4a3315 60%,#0d0906)",
+    "description": "Duzentos anos após o apocalipse nuclear, moradores de um abrigo subterrâneo precisam encarar o mundo devastado da superfície.",
+    "genres": ["Ficção Científica", "Ação", "Comédia"],
+    "rating": 8.8,
+    "year": "2024–",
+    "seasons": 1,
+    "episodes": 8,
+    "status": "Em andamento",
+    "streamings": ["prime-video"],
+    "featured": false,
+    "trending": true,
+    "reviewRatings": { "historia": 8.9, "personagens": 8.7, "roteiro": 8.8, "atuacoes": 8.9, "direcao": 8.8, "final": 8.6 },
+    "opinion": "Rarissima adaptação de videogame que acerta o tom exato da franquia: humor ácido, violência pastel e um mundo bizarro que funciona muito bem na tela. Já nasceu candidata a cult.",
+    "seasonsList": [
+      { "number": 1, "episodes": 8, "year": 2024, "rating": 8.8 }
+    ],
+    "whereToWatch": [
+      { "streaming": "prime-video", "status": "Disponível" }
+    ],
+    "similar": ["the-last-of-us", "the-boys", "stranger-things"]
+  },
+  {
+    "id": 7,
+    "title": "Game of Thrones",
+    "slug": "game-of-thrones",
+    "gradient": "linear-gradient(160deg,#15181c,#2a2f38 60%,#0a0c0e)",
+    "description": "Nobres famílias disputam o Trono de Ferro em Westeros enquanto uma ameaça sobrenatural se aproxima do Norte.",
+    "genres": ["Fantasia", "Drama", "Ação"],
+    "rating": 9.2,
+    "year": "2011–2019",
+    "seasons": 8,
+    "episodes": 73,
+    "status": "Finalizada",
+    "streamings": ["hbo-max"],
+    "featured": false,
+    "trending": false,
+    "reviewRatings": { "historia": 9.5, "personagens": 9.6, "roteiro": 9.3, "atuacoes": 9.4, "direcao": 9.2, "final": 6.5 },
+    "opinion": "Definiu uma geração de séries de fantasia e elevou o nível de produção da TV como um todo. O final dividiu opiniões — e muito —, mas as primeiras seis temporadas seguem entre o melhor que a TV já produziu.",
+    "seasonsList": [
+      { "number": 1, "episodes": 10, "year": 2011, "rating": 9.3 },
+      { "number": 2, "episodes": 10, "year": 2012, "rating": 9.5 },
+      { "number": 3, "episodes": 10, "year": 2013, "rating": 9.7 },
+      { "number": 4, "episodes": 10, "year": 2014, "rating": 9.8 },
+      { "number": 5, "episodes": 10, "year": 2015, "rating": 9.1 },
+      { "number": 6, "episodes": 10, "year": 2016, "rating": 9.3 },
+      { "number": 7, "episodes": 7, "year": 2017, "rating": 8.6 },
+      { "number": 8, "episodes": 6, "year": 2019, "rating": 5.5 }
+    ],
+    "whereToWatch": [
+      { "streaming": "hbo-max", "status": "Disponível" }
+    ],
+    "similar": ["house-of-the-dragon", "peaky-blinders", "dark"]
+  },
+  {
+    "id": 8,
+    "title": "House of the Dragon",
+    "slug": "house-of-the-dragon",
+    "gradient": "linear-gradient(160deg,#1c1210,#3d1c16 60%,#0d0806)",
+    "description": "Duzentos anos antes de Game of Thrones, a Casa Targaryen enfrenta uma guerra civil pela sucessão do trono.",
+    "genres": ["Fantasia", "Drama"],
+    "rating": 8.6,
+    "year": "2022–",
+    "seasons": 2,
+    "episodes": 18,
+    "status": "Em andamento",
+    "streamings": ["hbo-max"],
+    "featured": false,
+    "trending": false,
+    "reviewRatings": { "historia": 8.7, "personagens": 8.8, "roteiro": 8.5, "atuacoes": 8.9, "direcao": 8.6, "final": 0 },
+    "opinion": "Corrige boa parte dos erros de ritmo do final de Game of Thrones e entrega um drama político mais enxuto e cruel. O elenco melhora a cada temporada.",
+    "seasonsList": [
+      { "number": 1, "episodes": 10, "year": 2022, "rating": 8.5 },
+      { "number": 2, "episodes": 8, "year": 2024, "rating": 8.7 }
+    ],
+    "whereToWatch": [
+      { "streaming": "hbo-max", "status": "Disponível" }
+    ],
+    "similar": ["game-of-thrones", "peaky-blinders", "breaking-bad"]
+  },
+  {
+    "id": 9,
+    "title": "The Office",
+    "slug": "the-office",
+    "gradient": "linear-gradient(160deg,#1a1a14,#3d3620 60%,#0d0d09)",
+    "description": "Um documentário fictício acompanha o dia a dia absurdo dos funcionários de uma empresa de papel em Scranton, Pensilvânia.",
+    "genres": ["Comédia"],
+    "rating": 9.0,
+    "year": "2005–2013",
+    "seasons": 9,
+    "episodes": 201,
+    "status": "Finalizada",
+    "streamings": ["globoplay"],
+    "featured": false,
+    "trending": false,
+    "reviewRatings": { "historia": 8.5, "personagens": 9.7, "roteiro": 9.2, "atuacoes": 9.5, "direcao": 8.8, "final": 9.4 },
+    "opinion": "Uma das comédias mais quotáveis já feitas. Demora um pouco pra engrenar, mas quando acha o tom, vira daquelas séries que dá pra assistir de novo do zero e ainda rir igual.",
+    "seasonsList": [
+      { "number": 1, "episodes": 6, "year": 2005, "rating": 7.5 },
+      { "number": 2, "episodes": 22, "year": 2005, "rating": 8.8 },
+      { "number": 3, "episodes": 25, "year": 2006, "rating": 9.0 },
+      { "number": 4, "episodes": 19, "year": 2007, "rating": 9.1 }
+    ],
+    "whereToWatch": [
+      { "streaming": "globoplay", "status": "Disponível" }
+    ],
+    "similar": ["peaky-blinders", "breaking-bad", "black-mirror"]
+  },
+  {
+    "id": 10,
+    "title": "Black Mirror",
+    "slug": "black-mirror",
+    "gradient": "linear-gradient(160deg,#101215,#232a30 60%,#07090a)",
+    "description": "Antologia que explora, em episódios independentes, os efeitos sombrios e imprevisíveis da tecnologia na sociedade contemporânea.",
+    "genres": ["Ficção Científica", "Suspense", "Drama"],
+    "rating": 8.7,
+    "year": "2011–",
+    "seasons": 7,
+    "episodes": 33,
+    "status": "Em andamento",
+    "streamings": ["netflix"],
+    "featured": false,
+    "trending": false,
+    "reviewRatings": { "historia": 8.9, "personagens": 8.2, "roteiro": 9.0, "atuacoes": 8.5, "direcao": 8.8, "final": 0 },
+    "opinion": "A qualidade varia de episódio pra episódio, como toda antologia, mas os acertos são de um nível altíssimo. 'San Junipero' e 'USS Callister' sozinhos já justificam a série inteira.",
+    "seasonsList": [
+      { "number": 1, "episodes": 3, "year": 2011, "rating": 8.6 },
+      { "number": 2, "episodes": 3, "year": 2013, "rating": 8.8 },
+      { "number": 3, "episodes": 6, "year": 2016, "rating": 9.0 }
+    ],
+    "whereToWatch": [
+      { "streaming": "netflix", "status": "Disponível" }
+    ],
+    "similar": ["dark", "the-last-of-us", "fallout"]
+  },
+  {
+    "id": 11,
+    "title": "Better Call Saul",
+    "slug": "better-call-saul",
+    "gradient": "linear-gradient(160deg,#221c10,#4a3c18 60%,#0d0a05)",
+    "description": "Anos antes de virar o advogado de Walter White, Jimmy McGill luta para se estabelecer como advogado honesto — e falha, aos poucos, nessa tentativa.",
+    "genres": ["Drama", "Crime"],
+    "rating": 9.5,
+    "year": "2015–2022",
+    "seasons": 6,
+    "episodes": 63,
+    "status": "Finalizada",
+    "streamings": ["netflix"],
+    "featured": false,
+    "trending": false,
+    "reviewRatings": { "historia": 9.6, "personagens": 9.7, "roteiro": 9.5, "atuacoes": 9.8, "direcao": 9.4, "final": 9.7 },
+    "opinion": "Spin-off que supera a obra original em construção de personagem. Bob Odenkirk entrega uma das melhores atuações da década, e o final é de tirar o chapéu.",
+    "seasonsList": [
+      { "number": 1, "episodes": 10, "year": 2015, "rating": 9.0 },
+      { "number": 2, "episodes": 10, "year": 2016, "rating": 9.3 },
+      { "number": 3, "episodes": 10, "year": 2017, "rating": 9.5 }
+    ],
+    "whereToWatch": [
+      { "streaming": "netflix", "status": "Disponível" }
+    ],
+    "similar": ["breaking-bad", "peaky-blinders", "dark"]
+  },
+  {
+    "id": 12,
+    "title": "Peaky Blinders",
+    "slug": "peaky-blinders",
+    "gradient": "linear-gradient(160deg,#181818,#3a2e20 60%,#0a0a0a)",
+    "description": "Na Birmingham do pós-guerra, a família Shelby expande seu império criminoso enquanto enfrenta rivais, sindicalistas e o governo britânico.",
+    "genres": ["Drama", "Crime"],
+    "rating": 8.9,
+    "year": "2013–2022",
+    "seasons": 6,
+    "episodes": 36,
+    "status": "Finalizada",
+    "streamings": ["netflix"],
+    "featured": false,
+    "trending": false,
+    "reviewRatings": { "historia": 8.9, "personagens": 9.3, "roteiro": 8.8, "atuacoes": 9.4, "direcao": 9.1, "final": 8.4 },
+    "opinion": "Estética impecável, trilha sonora perfeita e Cillian Murphy no papel da vida dele como Thomas Shelby. Perde um pouco de força nas últimas temporadas, mas fecha bem o ciclo.",
+    "seasonsList": [
+      { "number": 1, "episodes": 6, "year": 2013, "rating": 8.5 },
+      { "number": 2, "episodes": 6, "year": 2014, "rating": 8.9 },
+      { "number": 3, "episodes": 6, "year": 2016, "rating": 8.7 }
+    ],
+    "whereToWatch": [
+      { "streaming": "netflix", "status": "Disponível" }
+    ],
+    "similar": ["breaking-bad", "better-call-saul", "the-office"]
+  }
+]

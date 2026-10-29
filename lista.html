@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Lista — Fala Uma Série</title>
+<meta name="description" id="pageDesc" content="Confira essa lista do Fala Uma Série.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero" id="listHero">
+    <div class="container">
+      <div class="breadcrumb"><a href="listas.html">Listas</a> / <span id="crumbTitle"></span></div>
+      <h1 id="listTitle">Carregando...</h1>
+      <p id="listDesc"></p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" id="listItems"></div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { lists, series } = await FUS.loadAll();
+  const slug = FUS.qs('slug');
+  const list = lists.find(l => l.slug === slug) || lists[0];
+
+  document.title = `${list.title} — Fala Uma Série`;
+  document.getElementById('pageTitle').textContent = `${list.title} — Fala Uma Série`;
+  document.getElementById('pageDesc').setAttribute('content', list.description);
+  document.getElementById('listTitle').textContent = list.title;
+  document.getElementById('listDesc').textContent = list.description;
+  document.getElementById('crumbTitle').textContent = list.title;
+  document.getElementById('listHero').style.borderBottom = '3px solid var(--yellow)';
+
+  const items = list.series.map(sl => FUS.seriesBySlug(series, sl)).filter(Boolean);
+  document.getElementById('listItems').innerHTML = items.map((s, i) => `
+    <div class="full-ranking-row">
+      <span class="ranking-num">${i+1}</span>
+      <div class="poster-thumb" style="background:${s.gradient}"></div>
+      <div style="flex:1">
+        <a class="rank-title" href="serie.html?slug=${s.slug}" style="display:block;margin-bottom:4px;">${s.title}</a>
+        <p style="margin:0;color:var(--white-faint);font-size:13.5px;max-width:520px;">${s.description}</p>
+      </div>
+      <span class="rating-pill">⭐ ${s.rating.toFixed(1)}</span>
+    </div>
+  `).join('') || '<p class="empty-state">Essa lista ainda não tem itens.</p>';
+});
+</script>
+</body>
+</html>

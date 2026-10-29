@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "Melhores séries de todos os tempos", "slug": "melhores-series-de-todos-os-tempos", "icon": "🏆", "series": ["breaking-bad", "dark", "better-call-saul", "game-of-thrones", "the-last-of-us"] },
+  { "id": 2, "title": "Melhores séries da Netflix", "slug": "melhores-series-da-netflix", "icon": "🎬", "series": ["breaking-bad", "dark", "better-call-saul", "black-mirror", "peaky-blinders"] },
+  { "id": 3, "title": "Melhores vilões", "slug": "melhores-viloes", "icon": "😈", "series": ["the-boys", "breaking-bad", "game-of-thrones"] },
+  { "id": 4, "title": "Melhores personagens", "slug": "melhores-personagens", "icon": "⭐", "series": ["breaking-bad", "peaky-blinders", "the-last-of-us", "better-call-saul"] },
+  { "id": 5, "title": "Melhores finais", "slug": "melhores-finais", "icon": "🎞️", "series": ["breaking-bad", "better-call-saul", "the-office"] },
+  { "id": 6, "title": "Melhores séries de suspense", "slug": "melhores-series-de-suspense", "icon": "🔎", "series": ["dark", "black-mirror", "breaking-bad"] }
+]

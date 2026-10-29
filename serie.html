@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Série — Fala Uma Série</title>
+<meta name="description" id="pageDesc" content="Avaliação, opinião, temporadas e onde assistir.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main id="mainContent">
+
+  <section class="detail-hero" id="detailHero">
+    <div class="detail-hero-bg" id="detailHeroBg"></div>
+    <div class="container">
+      <div class="hero-content" style="max-width:680px;">
+        <h1 class="hero-title" id="dTitle">Carregando...</h1>
+        <div class="detail-info-grid" id="dInfo"></div>
+        <div class="hero-meta" id="dMeta" style="margin-bottom:20px;"></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tabsAnchor" id="heroOndeBtn">Onde assistir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div style="max-width:760px;margin-bottom:40px;">
+        <h2 style="font-size:22px;margin-bottom:14px;">Sinopse</h2>
+        <p style="color:var(--white-dim);font-size:16.5px;line-height:1.7;" id="dSynopsis"></p>
+      </div>
+
+      <div class="tabs" id="tabsAnchor">
+        <button class="tab-btn active" data-tab="avaliacao">Avaliação</button>
+        <button class="tab-btn" data-tab="opiniao">Opinião</button>
+        <button class="tab-btn" data-tab="temporadas">Temporadas</button>
+        <button class="tab-btn" data-tab="onde">Onde assistir</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-avaliacao">
+        <div style="max-width:560px;" id="ratingBars"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-opiniao">
+        <h3 style="font-size:15px;letter-spacing:1px;color:var(--yellow);margin-bottom:16px;">Nossa opinião</h3>
+        <div class="opinion-box" id="opinionText"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-temporadas">
+        <div id="seasonsList"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-onde">
+        <div style="max-width:520px;" id="whereToWatchList"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="section-title"><h2>Séries parecidas</h2></div>
+      <div class="row-scroll" id="similarRow"></div>
+    </div>
+  </section>
+
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script src="js/serie-detail.js"></script>
+</body>
+</html>

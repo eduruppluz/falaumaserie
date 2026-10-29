@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Séries — Fala Uma Série</title>
+<meta name="description" content="Descubra sua próxima série. Filtre por gênero, streaming, nota e mais no catálogo do Fala Uma Série.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Descubra sua próxima série</h1>
+      <p>Filtre por gênero, streaming, nota e ano até achar exatamente o que você quer assistir hoje.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:36px;">
+    <div class="container">
+      <div class="filters-bar">
+        <div class="search-field">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="fSearch" placeholder="Buscar uma série...">
+        </div>
+        <select id="fGenre"><option value="">Gênero</option></select>
+        <select id="fStreaming"><option value="">Streaming</option></select>
+        <select id="fYear"><option value="">Ano</option></select>
+        <select id="fStatus"><option value="">Status</option></select>
+        <select id="fSort">
+          <option value="rating">Ordenar: Nota</option>
+          <option value="title">Ordenar: A-Z</option>
+          <option value="year">Ordenar: Ano</option>
+        </select>
+      </div>
+      <p class="section-sub" id="resultsCount" style="margin-top:0;"></p>
+      <div class="grid" id="seriesGrid"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script src="js/series.js"></script>
+</body>
+</html>

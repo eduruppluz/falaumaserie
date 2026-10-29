@@ -1,0 +1,10 @@
+[
+  { "id": 1, "date": "2026-10-24", "name": "Stranger Things", "detail": "Temporada 5 — Parte 1", "streaming": "netflix", "type": "Temporada nova" },
+  { "id": 2, "date": "2026-10-30", "name": "The Boys", "detail": "Temporada 5 (final)", "streaming": "prime-video", "type": "Temporada final" },
+  { "id": 3, "date": "2026-11-06", "name": "Black Mirror", "detail": "Nova leva de episódios", "streaming": "netflix", "type": "Episódios novos" },
+  { "id": 4, "date": "2026-11-14", "name": "Fallout", "detail": "Temporada 2", "streaming": "prime-video", "type": "Temporada nova" },
+  { "id": 5, "date": "2026-11-21", "name": "House of the Dragon", "detail": "Temporada 3", "streaming": "hbo-max", "type": "Temporada nova" },
+  { "id": 6, "date": "2026-12-01", "name": "Stranger Things", "detail": "Temporada 5 — Parte 2", "streaming": "netflix", "type": "Temporada nova" },
+  { "id": 7, "date": "2026-12-10", "name": "The Last of Us", "detail": "Temporada 3", "streaming": "hbo-max", "type": "Temporada nova" },
+  { "id": 8, "date": "2026-12-18", "name": "Peaky Blinders", "detail": "Filme de encerramento", "streaming": "netflix", "type": "Filme especial" }
+]

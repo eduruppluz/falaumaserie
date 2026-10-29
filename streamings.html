@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streamings — Fala Uma Série</title>
+<meta name="description" content="Descubra o que assistir em cada plataforma de streaming.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Streamings</h1>
+      <p>Descubra o que assistir em cada plataforma.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid" id="streamingsGrid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { streamings } = await FUS.loadAll();
+  document.getElementById('streamingsGrid').innerHTML = streamings.map(st => FUS.streamingCard(st)).join('');
+});
+</script>
+</body>
+</html>

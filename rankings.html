@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Rankings — Fala Uma Série</title>
+<meta name="description" id="pageDesc" content="Os rankings de séries do Fala Uma Série.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 id="pageH1">Rankings do Fala Uma Série</h1>
+      <p id="pageP">Os melhores, os piores, os inesquecíveis. Você concorda com a nossa ordem?</p>
+    </div>
+  </section>
+
+  <section class="section" id="gridView">
+    <div class="container">
+      <div class="grid" id="rankingsGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="detailView" style="display:none;">
+    <div class="container">
+      <div class="breadcrumb"><a href="rankings.html">Rankings</a> / <span id="crumbTitle"></span></div>
+      <div id="fullRankingList" style="max-width:720px;"></div>
+    </div>
+  </section>
+
+</main>
+<div id="footer-mount"></div>
+<script src="js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const { rankings, series } = await FUS.loadAll();
+  const slug = FUS.qs('slug');
+
+  if (slug) {
+    const r = rankings.find(x => x.slug === slug);
+    if (r) {
+      document.getElementById('gridView').style.display = 'none';
+      document.getElementById('detailView').style.display = '';
+      document.getElementById('pageH1').textContent = `${r.icon} ${r.title}`;
+      document.getElementById('pageP').textContent = 'A ordem é do Fala Uma Série — manda sua discordância nos comentários do Instagram.';
+      document.title = `${r.title} — Fala Uma Série`;
+      document.getElementById('pageTitle').textContent = `${r.title} — Fala Uma Série`;
+      document.getElementById('crumbTitle').textContent = r.title;
+      const items = r.series.map(sl => FUS.seriesBySlug(series, sl)).filter(Boolean);
+      document.getElementById('fullRankingList').innerHTML = items.map((s, i) => `
+        <div class="full-ranking-row">
+          <span class="ranking-num">${i+1}</span>
+          <div class="poster-thumb" style="background:${s.gradient}"></div>
+          <a class="rank-title" href="serie.html?slug=${s.slug}" style="flex:1">${s.title}</a>
+          <span class="rating-pill">⭐ ${s.rating.toFixed(1)}</span>
+        </div>
+      `).join('');
+      return;
+    }
+  }
+  document.getElementById('rankingsGrid').innerHTML = rankings.map(r => FUS.rankingCard(r, series)).join('');
+});
+</script>
+</body>
+</html>

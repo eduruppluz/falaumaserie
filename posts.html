@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textos — Fala Uma Série</title>
+<meta name="description" content="Críticas, rankings, recomendações, listas e cancelamentos do Fala Uma Série.">
+<link rel="icon" href="assets/logo-small.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header-mount" class="site-header"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1 id="pageH1">Todos os textos</h1>
+      <p id="pageP">Críticas, rankings, recomendações, listas e cancelamentos.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:30px;">
+    <div class="container">
+      <div class="chips" id="typeChips" style="margin-bottom:18px;"></div>
+      <div class="filters">
+        <input type="text" id="fSearch" placeholder="Buscar por título ou assunto...">
+        <select id="fSerie"><option value="">Todas as séries</option></select>
+      </div>
+      <p class="results-count" id="count"></p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+</main>
+<div id="footer-mount"></div>
+<script src="js/app.js"></script>
+<script src="js/posts.js"></script>
+</body>
+</html>

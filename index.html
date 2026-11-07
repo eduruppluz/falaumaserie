@@ -3,114 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fala Uma Série — Notícias, opiniões e tudo sobre séries</title>
-<meta name="description" content="Notícias, críticas, listas e rankings sobre séries. O portal do Fala Uma Série pra você nunca mais ficar sem saber o que assistir.">
+<title>Fala Uma Série — séries que ficaram comigo</title>
+<meta name="description" content="Críticas por temporada, rankings, recomendações e listas sobre séries, em primeira pessoa. Seu próximo episódio começa aqui.">
 <meta property="og:title" content="Fala Uma Série">
-<meta property="og:description" content="Seu próximo episódio começa aqui.">
+<meta property="og:description" content="Séries que ficaram comigo: críticas, rankings, recomendações e listas.">
 <meta property="og:image" content="assets/logo.png">
 <link rel="icon" href="assets/logo-small.png">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <div id="header-mount" class="site-header"></div>
-
 <main>
 
-  <!-- NEWS HERO GRID (estilo Omelete) -->
-  <section class="container">
-    <div class="news-hero-grid" id="newsHeroGrid"></div>
+  <section class="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="container">
+      <div class="hero-intro">
+        <span class="eyebrow">Diário de séries</span>
+        <h1>Séries que <em>ficaram</em> comigo</h1>
+        <p class="hero-sub">Críticas por temporada, rankings, recomendações e listas — escritas em primeira pessoa, por quem assistiu (e reassistiu) cada uma.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="posts.html?tipo=critica">Ler as críticas</a>
+          <a class="btn btn-outline" href="posts.html?tipo=recomendacao">O que assistir</a>
+        </div>
+      </div>
+      <div id="heroFeature"></div>
+    </div>
   </section>
 
-  <!-- GRID DENSO DE ÚLTIMAS NOTÍCIAS -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
-        <h2>Últimas notícias</h2>
-        <a class="see-all" href="noticias.html">Ver todas →</a>
-      </div>
-      <div class="news-grid-dense" id="denseGrid1"></div>
+      <div class="tiles" id="tiles"></div>
     </div>
   </section>
 
-  <!-- EM ALTA -->
-  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <section class="section alt">
     <div class="container">
-      <div class="section-title">
-        <h2>🔥 Em alta</h2>
-        <a class="see-all" href="series.html">Ver todas →</a>
-      </div>
-      <div class="row-scroll" id="trendingRow"></div>
+      <div class="section-title"><h2>Críticas <em>por temporada</em></h2><a class="see-all" href="posts.html?tipo=critica">Ver todas →</a></div>
+      <div class="row-scroll" id="rowCriticas"></div>
     </div>
   </section>
 
-  <!-- SÉRIE DA SEMANA -->
-  <section class="section">
-    <div class="container" id="weekPick"></div>
-  </section>
-
-  <!-- RANKINGS -->
-  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div class="section-title">
-        <h2>🏆 Rankings do Fala Uma Série</h2>
-        <a class="see-all" href="rankings.html">Ver todos os rankings →</a>
-      </div>
-      <div class="grid" id="rankingsGrid"></div>
-    </div>
-  </section>
-
-  <!-- LISTAS -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
-        <h2>📋 Listas</h2>
-        <a class="see-all" href="listas.html">Ver todas as listas →</a>
-      </div>
-      <div class="grid" id="listsGrid"></div>
+      <div class="section-title"><h2>Rankings <em>das temporadas</em></h2><a class="see-all" href="posts.html?tipo=ranking">Ver todos →</a></div>
+      <p class="section-sub">Da que eu menos gostei à que eu mais amei. Você concorda com a ordem?</p>
+      <div class="grid" id="gridRankings"></div>
     </div>
   </section>
 
-  <!-- STREAMINGS -->
-  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <section class="section alt">
     <div class="container">
-      <div class="section-title">
-        <h2>📺 O que assistir?</h2>
-        <a class="see-all" href="streamings.html">Ver todos →</a>
-      </div>
-      <p class="section-sub">Descubra as melhores séries disponíveis nos seus streamings favoritos.</p>
-      <div class="row-scroll" id="streamingsRow"></div>
+      <div class="section-title"><h2>O que <em>assistir</em></h2><a class="see-all" href="posts.html?tipo=recomendacao">Todas as recomendações →</a></div>
+      <p class="section-sub">Não sabe o que ver hoje? Calma, eu te ajudo.</p>
+      <div class="grid" id="gridRecos"></div>
     </div>
   </section>
 
-  <!-- MAIS NOTÍCIAS (grid denso 2) -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
-        <h2>📰 Mais notícias</h2>
-        <a class="see-all" href="noticias.html">Ver todas →</a>
-      </div>
-      <div class="news-grid-dense" id="denseGrid2"></div>
+      <div class="section-title"><h2>Cancelados <em>cedo demais</em></h2><a class="see-all" href="posts.html?tipo=cancelamento">Ver todos →</a></div>
+      <div class="grid" id="gridCancel"></div>
     </div>
   </section>
 
-  <!-- RECOMENDAÇÕES -->
-  <section class="section" style="background:var(--graphite);border-top:1px solid var(--border);">
-    <div class="container" id="recoSection"></div>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-title"><h2>Listas</h2><a class="see-all" href="posts.html?tipo=lista">Ver todas →</a></div>
+      <div class="grid" id="gridListas"></div>
+    </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="cta-final">
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><h2>Por <em>série</em></h2><a class="see-all" href="series.html">Ver todas →</a></div>
+      <div class="chips" id="seriesChips"></div>
+    </div>
+  </section>
+
+  <section class="cta">
     <h2>Curte séries? Então acompanha o Fala Uma Série.</h2>
-    <p>Notícias, listas e recomendações novas toda semana, direto no seu feed.</p>
-    <a class="btn btn-primary" href="https://instagram.com" target="_blank" rel="noopener">Seguir no Instagram</a>
+    <p>Texto novo, opinião sem filtro e muita série boa (e nem tão boa) no Instagram.</p>
+    <a class="btn btn-primary" href="https://www.instagram.com/falaumaserie/" target="_blank" rel="noopener">Seguir no Instagram</a>
   </section>
 
 </main>
-
 <div id="footer-mount"></div>
-
-<script src="js/utils.js"></script>
+<script src="js/app.js"></script>
 <script src="js/home.js"></script>
 </body>
 </html>

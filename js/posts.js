@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const posts = await FUS.loadPosts();
   const tipo = FUS.qs('tipo') || '';
+  if (tipo) document.querySelector('main').dataset.type = tipo;
   const serie = FUS.qs('serie') || '';
   const T = FUS.TYPES;
 

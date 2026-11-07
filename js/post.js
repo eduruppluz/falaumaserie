@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const posts = await FUS.loadPosts();
   const slug = FUS.qs('slug');
   const p = posts.find(x => x.slug === slug);
+  if (p) document.querySelector('main').dataset.type = p.type;
   const root = document.getElementById('article');
   if (!p) {
     root.innerHTML = '<div class="empty" style="padding:120px 24px">Texto não encontrado. <a class="see-all" href="index.html">Voltar ao início</a></div>';

@@ -68,7 +68,7 @@ const FUS = (() => {
       ? `<div class="pc-media"><img src="${esc(img(p.cover))}" alt="" loading="lazy">${tag}</div>`
       : `<div class="pc-media pc-type" style="background:${gradFor(p.series)}">${tag}<span class="pc-series">${esc(p.series)}</span></div>`;
     return `
-    <a class="pc fade-in" href="post.html?slug=${p.slug}">
+    <a class="pc" data-type="${p.type}" href="post.html?slug=${p.slug}">
       ${media}
       <div class="pc-body">
         <h3>${esc(p.title)}</h3>
@@ -191,6 +191,49 @@ const FUS = (() => {
   }
 
   return { TYPES, INSTAGRAM, esc, norm, img, qs, gradFor, loadPosts, seriesList, typeLabel, postCard, seriesCard, injectHeaderFooter, navActive };
+})();
+
+
+/* ---------- Efeitos: revelar ao rolar, spotlight, tilt 3D, contadores, parallax ---------- */
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SEL = '.section-title, .pc, .tile, .chip, .sc, .cta h2, .cta p, .page-hero h1, .article-body > *';
+  let io;
+  const countUp = el => {
+    const n = parseInt(el.textContent, 10); if (!n || still) return;
+    const t0 = performance.now();
+    const step = t => { const k = Math.min(1, (t - t0) / 900); el.textContent = Math.round(n * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
+    el.textContent = '0'; requestAnimationFrame(step);
+  };
+  function scan() {
+    if (!io) io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target);
+      e.target.querySelectorAll?.('.n').forEach(countUp);
+    }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll(SEL).forEach(el => {
+      if (el.dataset.fx) return; el.dataset.fx = 1;
+      if (still) return;
+      el.classList.add('fx');
+      const sib = [...el.parentElement.children].indexOf(el);
+      el.style.setProperty('--d', Math.min(sib, 6) * 70 + 'ms');
+      io.observe(el);
+    });
+  }
+  let tm; new MutationObserver(() => { clearTimeout(tm); tm = setTimeout(scan, 30); }).observe(document.body, { childList: true, subtree: true });
+  document.addEventListener('DOMContentLoaded', scan);
+
+  if (still) return;
+  document.addEventListener('mousemove', e => {
+    const c = e.target.closest?.('.pc, .tile');
+    if (c) {
+      const r = c.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      c.style.setProperty('--mx', x + 'px'); c.style.setProperty('--my', y + 'px');
+      c.style.transform = `perspective(700px) rotateX(${((y / r.height) - .5) * -7}deg) rotateY(${((x / r.width) - .5) * 7}deg) translateY(-5px)`;
+    }
+    const w = document.querySelector('.wall');
+    if (w) { w.style.setProperty('--px', ((e.clientX / innerWidth) - .5) * -26 + 'px'); w.style.setProperty('--py', ((e.clientY / innerHeight) - .5) * -18 + 'px'); }
+  });
+  document.addEventListener('mouseout', e => { const c = e.target.closest?.('.pc, .tile'); if (c && !c.contains(e.relatedTarget)) c.style.transform = ''; });
 })();
 
 if (!window.__PREVIEW) document.addEventListener('DOMContentLoaded', () => FUS.injectHeaderFooter());

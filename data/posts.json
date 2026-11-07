@@ -307,7 +307,7 @@
   "readMin": 3,
   "slug": "ranking-dawson-s-creek",
   "id": 15,
-  "cover": null,
+  "cover": "img/posts/capa-dc1.jpg",
   "images": []
  },
  {
@@ -324,7 +324,7 @@
   "readMin": 3,
   "slug": "ranking-everwood",
   "id": 16,
-  "cover": null,
+  "cover": "img/posts/capa-ev.jpg",
   "images": []
  },
  {
@@ -341,7 +341,7 @@
   "readMin": 3,
   "slug": "ranking-lost",
   "id": 17,
-  "cover": null,
+  "cover": "img/posts/capa-lost.jpg",
   "images": []
  },
  {
@@ -426,7 +426,7 @@
   "readMin": 2,
   "slug": "recomendacao-13-reasons-why",
   "id": 22,
-  "cover": null,
+  "cover": "img/posts/capa-13r.jpg",
   "images": []
  },
  {
@@ -443,7 +443,7 @@
   "readMin": 3,
   "slug": "recomendacao-atypical",
   "id": 23,
-  "cover": null,
+  "cover": "img/posts/capa-aty.jpg",
   "images": []
  },
  {
@@ -460,7 +460,7 @@
   "readMin": 3,
   "slug": "recomendacao-big-little-lies",
   "id": 24,
-  "cover": null,
+  "cover": "img/posts/capa-bll.jpg",
   "images": []
  },
  {
@@ -477,7 +477,7 @@
   "readMin": 2,
   "slug": "recomendacao-brothers-sisters",
   "id": 25,
-  "cover": null,
+  "cover": "img/posts/capa-bs.jpg",
   "images": []
  },
  {
@@ -494,7 +494,7 @@
   "readMin": 2,
   "slug": "recomendacao-control-z",
   "id": 26,
-  "cover": null,
+  "cover": "img/posts/capa-cz.jpg",
   "images": []
  },
  {
@@ -511,7 +511,7 @@
   "readMin": 2,
   "slug": "recomendacao-dawson-s-creek",
   "id": 27,
-  "cover": null,
+  "cover": "img/posts/capa-dc2.jpg",
   "images": []
  },
  {
@@ -545,7 +545,7 @@
   "readMin": 3,
   "slug": "recomendacao-everwood",
   "id": 29,
-  "cover": null,
+  "cover": "img/posts/capa-ev.jpg",
   "images": []
  },
  {
@@ -596,7 +596,7 @@
   "readMin": 3,
   "slug": "recomendacao-lost",
   "id": 32,
-  "cover": null,
+  "cover": "img/posts/capa-lost.jpg",
   "images": []
  },
  {
@@ -800,7 +800,7 @@
   "readMin": 3,
   "slug": "lista-dawson-s-creek-melhores-episodios-das-series",
   "id": 44,
-  "cover": null,
+  "cover": "img/posts/capa-dc2.jpg",
   "images": []
  },
  {
@@ -817,7 +817,7 @@
   "readMin": 3,
   "slug": "lista-dawson-s-creek-um-episodio-por-temporada",
   "id": 45,
-  "cover": null,
+  "cover": "img/posts/capa-dc1.jpg",
   "images": []
  },
  {
@@ -834,7 +834,7 @@
   "readMin": 2,
   "slug": "lista-everwood-motivos-para-assistir",
   "id": 46,
-  "cover": null,
+  "cover": "img/posts/capa-ev.jpg",
   "images": []
  },
  {

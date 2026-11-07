@@ -17,10 +17,11 @@
 
   <section class="hero">
     <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-logo"><img src="assets/logo.png" alt=""></div>
     <div class="container">
       <div class="hero-intro">
         <span class="eyebrow">Diário de séries</span>
-        <h1>Séries que <em>ficaram</em> comigo</h1>
+        <h1 id="heroTitle">Séries que <em>ficaram</em> comigo</h1>
         <p class="hero-sub">Críticas por temporada, rankings, recomendações e listas — escritas em primeira pessoa, por quem assistiu (e reassistiu) cada uma.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="posts.html?tipo=critica">Ler as críticas</a>
@@ -31,20 +32,23 @@
     </div>
   </section>
 
+  <div class="ticker" id="ticker1"></div>
+  <div class="ticker t2" id="ticker2"></div>
+
   <section class="section">
     <div class="container">
       <div class="tiles" id="tiles"></div>
     </div>
   </section>
 
-  <section class="section alt">
+  <section data-type="critica" class="section alt">
     <div class="container">
       <div class="section-title"><h2>Críticas <em>por temporada</em></h2><a class="see-all" href="posts.html?tipo=critica">Ver todas →</a></div>
       <div class="row-scroll" id="rowCriticas"></div>
     </div>
   </section>
 
-  <section class="section">
+  <section data-type="ranking" class="section">
     <div class="container">
       <div class="section-title"><h2>Rankings <em>das temporadas</em></h2><a class="see-all" href="posts.html?tipo=ranking">Ver todos →</a></div>
       <p class="section-sub">Da que eu menos gostei à que eu mais amei. Você concorda com a ordem?</p>
@@ -52,7 +56,7 @@
     </div>
   </section>
 
-  <section class="section alt">
+  <section data-type="recomendacao" class="section alt">
     <div class="container">
       <div class="section-title"><h2>O que <em>assistir</em></h2><a class="see-all" href="posts.html?tipo=recomendacao">Todas as recomendações →</a></div>
       <p class="section-sub">Não sabe o que ver hoje? Calma, eu te ajudo.</p>
@@ -60,14 +64,14 @@
     </div>
   </section>
 
-  <section class="section">
+  <section data-type="cancelamento" class="section">
     <div class="container">
       <div class="section-title"><h2>Cancelados <em>cedo demais</em></h2><a class="see-all" href="posts.html?tipo=cancelamento">Ver todos →</a></div>
       <div class="grid" id="gridCancel"></div>
     </div>
   </section>
 
-  <section class="section alt">
+  <section data-type="lista" class="section alt">
     <div class="container">
       <div class="section-title"><h2>Listas</h2><a class="see-all" href="posts.html?tipo=lista">Ver todas →</a></div>
       <div class="grid" id="gridListas"></div>

@@ -291,3 +291,12 @@ h1, h2, h3, h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; 
 html, body { overflow-x: clip; }
 .hero .container { width: 100%; }
 .ticker { margin-left: -2%; margin-right: -2%; }
+
+/* setas das fileiras */
+.row-wrap { position: relative; }
+.row-scroll { padding-top: 6px; }
+.row-btn { position: absolute; top: 34%; z-index: 5; width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--accent); background: rgba(17,17,17,.88); color: var(--accent); font-size: 30px; line-height: 1; padding: 0 0 4px; cursor: pointer; display: grid; place-items: center; backdrop-filter: blur(6px); box-shadow: 0 6px 20px rgba(0,0,0,.5); transition: transform .15s, background .15s, color .15s, opacity .2s; }
+.row-btn:hover { background: var(--accent); color: var(--black); transform: scale(1.1); }
+.row-btn.prev { left: -14px; } .row-btn.next { right: -14px; }
+.row-btn.off { opacity: 0; pointer-events: none; }
+@media (max-width: 720px) { .row-btn { width: 40px; height: 40px; font-size: 26px; } .row-btn.prev { left: -6px; } .row-btn.next { right: -6px; } }

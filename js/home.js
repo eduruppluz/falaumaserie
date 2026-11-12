@@ -33,8 +33,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     </a>`).join('');
 
   document.getElementById('rowCriticas').innerHTML = of('critica').map(FUS.postCard).join('');
+  // Setas para rolar as fileiras de lado
+  ['rowCriticas', 'gridRecos'].forEach(id => {
+    const row = document.getElementById(id);
+    const wrap = document.createElement('div'); wrap.className = 'row-wrap';
+    row.parentNode.insertBefore(wrap, row); wrap.appendChild(row);
+    wrap.insertAdjacentHTML('beforeend', '<button class="row-btn prev" aria-label="Anterior" type="button">‹</button><button class="row-btn next" aria-label="Próximo" type="button">›</button>');
+    const prev = wrap.querySelector('.prev'), next = wrap.querySelector('.next');
+    const upd = () => { prev.classList.toggle('off', row.scrollLeft < 8); next.classList.toggle('off', row.scrollLeft + row.clientWidth >= row.scrollWidth - 8); };
+    const go = d => row.scrollBy({ left: d * Math.max(280, row.clientWidth * .8), behavior: 'smooth' });
+    prev.onclick = () => go(-1); next.onclick = () => go(1);
+    row.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); setTimeout(upd, 60); setTimeout(upd, 600);
+  });
   document.getElementById('gridRankings').innerHTML = of('ranking').slice(0, 3).map(FUS.postCard).join('');
-  document.getElementById('gridRecos').innerHTML = of('recomendacao').slice(0, 6).map(FUS.postCard).join('');
+  document.getElementById('gridRecos').innerHTML = of('recomendacao').map(FUS.postCard).join('');
   document.getElementById('gridCancel').innerHTML = of('cancelamento').slice(0, 3).map(FUS.postCard).join('');
   document.getElementById('gridListas').innerHTML = of('lista').slice(0, 3).map(FUS.postCard).join('');
   document.getElementById('seriesChips').innerHTML = FUS.seriesList(posts)

@@ -1,5 +1,22 @@
 [
  {
+  "id": 62,
+  "slug": "lista-harry-potter-cenas-que-quero-ver",
+  "type": "lista",
+  "typeLabel": "Lista",
+  "series": "Harry Potter",
+  "seriesSlug": "harry-potter",
+  "group": "Cenas que eu quero ver",
+  "season": null,
+  "title": "8 cenas que eu quero ver em Harry Potter e a Pedra Filosofal",
+  "dek": "A nova série é uma oportunidade de reencontrar Hogwarts e dar espaço a momentos do livro que ficaram de fora ou ganharam outro rumo no cinema.",
+  "body": "<p class=\"spoiler-note\">CUIDADO: SPOILERS DO LIVRO!</p><p>A estreia se aproxima, e já tenho minha lista de desejos. Amo revisitar esse universo, mas o que mais me empolga numa nova adaptação é a possibilidade de acompanhar detalhes que o filme precisou deixar pelo caminho. Estas são as oito cenas que eu gostaria de ver:</p><h3>1) Pirraça aprontando em Hogwarts</h3><p>Um dos personagens mais divertidos desse universo ficou completamente de fora dos filmes. No primeiro livro, o poltergeist participa da sequência que leva Harry, Rony e Hermione ao corredor proibido. Quero ver suas provocações, a confusão que causa e a maneira como torna a vida no castelo ainda mais imprevisível.</p><h3>2) Hermione resolvendo o desafio das poções</h3><p>Entre as proteções da Pedra Filosofal, está o enigma preparado por Snape. Não basta saber lançar feitiços: é preciso usar a lógica para descobrir quais frascos permitem seguir adiante ou voltar. Hermione brilha muito nessa parte, e eu adoraria acompanhar o raciocínio dela.</p><h3>3) Mais da infância de Harry com os Dursley</h3><p>Gostaria de acompanhar melhor Harry antes da carta de Hogwarts. A convivência difícil com os tios, os problemas na escola e a sensação de não pertencer ajudam a entender o peso de descobrir outro mundo. Não precisa ser uma sequência interminável de sofrimento, mas dar tempo a essa fase tornaria a chegada à escola ainda mais significativa.</p><h3>4) Hagrid encontrando Harry nos escombros</h3><p>Já pensou acompanhar Hagrid chegando à casa destruída e encontrando o bebê Harry? Seria uma oportunidade de mostrar um momento que conhecemos principalmente pelos relatos. Não é uma passagem desenvolvida em detalhes no primeiro livro, mas eu gostaria de vê-la ganhar forma na série.</p><h3>5) O confronto no Expresso de Hogwarts</h3><p>A viagem de trem também tem uma confusão envolvendo Draco, Crabbe, Goyle, Harry, Rony e até Perebas. Quero ver essa dinâmica com mais espaço, mostrando como as primeiras alianças e rivalidades começam a se formar. E essa cena tem tudo para ser muito divertida.</p><h3>6) Firenze e o conflito entre os centauros</h3><p>A passagem pela Floresta Proibida merece uma adaptação mais completa. Firenze salva Harry, mas a decisão provoca discordância entre os outros centauros. Gosto de como esse encontro sugere que existem perspectivas e conflitos que o protagonista ainda não compreende.</p><h3>7) O confronto com Quirrell como no livro</h3><p>A resolução do filme ficou marcada, mas gostaria de ver a série mais próxima da experiência do livro. O contato com Harry provoca queimaduras em Quirrell, e a cena não se resume àquela transformação em pó que vimos no cinema. A proteção deixada por Lily e a dificuldade de Harry entender o que está acontecendo podem render um final muito envolvente.</p><h3>8) A volta ao mundo dos Dursley</h3><p>Depois de conhecer Hogwarts, voltar à vida anterior tem outro peso. Gostaria de ver a despedida do ano e o reencontro com os tios com mais atenção, valorizando o quanto Harry mudou. O garoto que retorna já encontrou amigos e um lugar ao qual pertence. Para mim, encerrar a temporada com essa diferença seria tão importante quanto a aventura da Pedra Filosofal.</p>",
+  "spoiler": true,
+  "readMin": 3,
+  "cover": null,
+  "images": []
+ },
+ {
   "type": "critica",
   "typeLabel": "Crítica",
   "series": "Cobra Kai",
